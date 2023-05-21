@@ -106,24 +106,24 @@ class CN_QuantifierSegmenter implements ISegmenter{
 	 */
 	private void processCNumber(AnalyzeContext context){
 		if(nStart == -1 && nEnd == -1){//初始状态
-			if(CharacterUtil.CHAR_CHINESE == context.getCurrentCharType() 
-					&& ChnNumberChars.contains(context.getCurrentChar())){
+//			if(CharacterUtil.CHAR_CHINESE == context.getCurrentCharType()
+//					&& ChnNumberChars.contains(context.getCurrentChar())){
 				//记录数词的起始、结束位置
 				nStart = context.getCursor();
 				nEnd = context.getCursor();
-			}
+//			}
 		}else{//正在处理状态
-			if(CharacterUtil.CHAR_CHINESE == context.getCurrentCharType() 
-					&& ChnNumberChars.contains(context.getCurrentChar())){
+//			if(CharacterUtil.CHAR_CHINESE == context.getCurrentCharType()
+//					&& ChnNumberChars.contains(context.getCurrentChar())){
 				//记录数词的结束位置
 				nEnd = context.getCursor();
-			}else{
-				//输出数词
-				this.outputNumLexeme(context);
-				//重置头尾指针
-				nStart = -1;
-				nEnd = -1;
-			}
+//			}else{
+//				//输出数词
+//				this.outputNumLexeme(context);
+//				//重置头尾指针
+//				nStart = -1;
+//				nEnd = -1;
+//			}
 		}
 		
 		//缓冲区已经用完，还有尚未输出的数词
